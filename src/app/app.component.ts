@@ -13,6 +13,20 @@ export class AppComponent {
 
     loggedIn: boolean = false;
 
+    stylePreference: string;
+
+    setImportance() {
+        if(this.stylePreference === 'hilite') {
+            return {'background-color' : 'yellow'}
+        } else if (this.stylePreference === 'caps') {
+            return {'text-transform' : 'uppercase'}
+        }
+    }
+
+    setStylePreference(value: string) {
+        this.stylePreference = value;
+    }
+
     logIn(evt) {
         console.log(evt);
         this.loggedIn = evt;
